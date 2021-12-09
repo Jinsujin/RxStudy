@@ -254,7 +254,7 @@ let observable: Observable<Int> {
   * RxSwift의 자료들이 없더라도, 다른 언어들에서 확인하는것과 크게 차이나지 않음.
 * 기호
   * `->`: 시간
-  * `O`: 데이터 스트림
+  * `ㅇ`: 데이터 스트림
   * `ㅁ`: Operator
   * `|`: Complete
   * `X`: Error
