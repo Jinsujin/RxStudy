@@ -106,7 +106,7 @@ contentOffset
 BehaviorSubject는 현재 값을 취득 가능한 value Method를 가지고 있다. 
 Observable이기도 하기 때문에 onError, onCompleted가 이미 발생했을 가능성이 있기 때문에 value Method를 사용할 때 분기를 추가할 필요가 있다.
 
-~~#### Variable ~~ 삭제됨
-~~Variable는 BehaviorSubject에서 Observable를 제거한 것 같은 것으로, onError, onCompleted를 발생 시키지 않는다. ~~
-~~때문에 value 취득 시 BehaviorSubject 처럼 분기를 추가할 필요가 없다. Observable로써 사용할 경우 asObservable를 사용한다. ~~
-~~또한 값을 저장할 수 있고, 갱신을 검지하고 싶을 경우 Observable를 갱신하고 구독하는 것으로 가능하다. ~~
+#### ~~Variable ~~ 삭제됨
+- ~~Variable는 BehaviorSubject에서 Observable를 제거한 것 같은 것으로, onError, onCompleted를 발생 시키지 않는다. ~~
+- ~~때문에 value 취득 시 BehaviorSubject 처럼 분기를 추가할 필요가 없다. Observable로써 사용할 경우 asObservable를 사용한다. ~~
+- ~~또한 값을 저장할 수 있고, 갱신을 검지하고 싶을 경우 Observable를 갱신하고 구독하는 것으로 가능하다. ~~
