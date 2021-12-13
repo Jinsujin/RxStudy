@@ -78,7 +78,6 @@ contentOffset
         print("completed")
     })
     .addDisposableTo(disposeBag)
-    }
 ```
 
 ### Subscribe
