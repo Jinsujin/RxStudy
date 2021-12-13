@@ -78,9 +78,10 @@ contentOffset
         print("completed")
     })
     .addDisposableTo(disposeBag)
+    }
+```
 
-    ```
- ### Subscribe
+### Subscribe
 1. subscribe를 쓰는 걸로 Obserbvable를 구독 가능
 2. Event가 발생 할 때마다 subscribe에 onNext가 전달하는 closer가 호출됨
 3. .onError, .onCompleted 동일하게 closer가 호출됨
