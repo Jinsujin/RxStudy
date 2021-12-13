@@ -66,10 +66,9 @@ __FRP에 대해 추후 Update 예정__
 2. onError: Error 발생을 통지, 발생 후 Event가 일절 발생하지 않는다.
 3. onCompleted: 완료를 통지, 발생 후 Event가 일절 발생하지 않는다.
 
-'''RxSwift
+``` RxSwift
 private let disposeBag = DisposeBag()
 let contentOffset = tableView.rx.contentOffset
-        
 contentOffset
     .subscribe(onNext: {
         print("next")
@@ -79,9 +78,8 @@ contentOffset
         print("completed")
     })
     .addDisposableTo(disposeBag)
-'''
 
-
+    ```
  ### Subscribe
 1. subscribe를 쓰는 걸로 Obserbvable를 구독 가능
 2. Event가 발생 할 때마다 subscribe에 onNext가 전달하는 closer가 호출됨
