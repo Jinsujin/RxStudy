@@ -99,21 +99,19 @@ RxSwift 를 공부하고 공유하는 공간입니다.
      2. View가 Model에 직접 연결되지 않음
         * MVC에서 Vivew는 Simple하게 표시한다. 그리고 완전히 상태를 가지고 있지 않다.</br> 
         View에 대해서만 Logic이 없음. 즉 MVP라면 절대적으로 필요한 View에서 Presenter로의 Delegate가 없다.
+4. MVVM
+   * App 구현을 Model, ViewModel, View layer로 나눈 아키텍쳐
+   * View → ViewModel → Model을 참조한다. View → Model로 참조 불가
+   * View와 ViewModel을 Bind (Data가 변경 시 UI 표시를 갱신하기 위한 경우 필요)
+   * 각 Layer의 역할 배치로 ViewController에 과중된 역할 탈피(Fat ViewController 대응)
 
-
----------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------
 
 ### RxSwift 개념
 1. ReactiveX(Reactive Extensions) Swift판
 2. Rx는 FRP(Functional Reactive Programming)의 한 종류
 __FRP에 대해 추후 Update 예정__
 3. 비동기 처리, Event 처리를 Support하는 Library(Callback 지옥에서 해방)
-
-### MVVM
-1. App 구현을 Model, ViewModel, View layer로 나눈 아키텍쳐
-2. View → ViewModel → Model을 참조한다. View → Model로 참조 불가
-3. View와 ViewModel을 Bind (Data가 변경 시 UI 표시를 갱신하기 위한 경우 필요)
-4. 각 Layer의 역할 배치로 ViewController에 과중된 역할 탈피(Fat ViewController 대응)
 
 ### Observable
 1. onNext: 통상의 Event을 통지, 여러번 보내진다.
