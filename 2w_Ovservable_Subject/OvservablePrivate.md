@@ -78,3 +78,60 @@ extension Event {
 }
 ```
 
+#### Disposable Protocol의 정의
+push형의 observer pattern에는 존재하지 않는다. 이 Protocol은 단순히 push형의 observer pattern의 unscribe의 역할을 object로써 때어낸것이다.</br> 
+unsubscribe를 발생시키는 단순한 Method dispose만을 가지는 simple한 interface가 된다.
+```
+public protocol Disposable {
+    func dispose()
+}
+```
+### ObserverType, ObservableType Protocol 정의
+거의 push형 Observer Pattern과 차이가 없다. 차이가 있는 점은 값이 Event라는 문법으로 통지되는 점이 다르다.
+문법이 있기 때문에 지금까지 notify라 명명한 부분이 on이라는 이름으로 변경되어 있다. 이것은 인수에 enum 값으로  .next(Element), .error(Error), .completed가 전달된다고 생각하면 자원스러운 명칭이다.
+```swift
+public protocol ObservableType {
+    associatedtype E
+    func subscribe<O: ObserverType>(_ observer: O) -> Disposable where O.E == E
+}
+
+public protocol ObserverType {
+    associatedtype E
+    func on(_ event: Event<E>)
+}
+```
+또 ObserverTypeㅇ는 편리한 확장 Method로써 onNext(Element), onError(Error), onCompleted가 있다.
+```swift
+extension ObserverType {    
+    public final func onNext(_ element: E) {
+        on(.next(element))
+    }
+
+    public final func onCompleted() {
+        on(.completed)
+    }
+
+    public final func onError(_ error: Swift.Error) {
+        on(.error(error))
+    }
+}
+```
+
+### Observable 구현
+기본적으로 ObserverType의 관련형(associated type)을 형Parameter로 끌어올리는것 이 외의 것은 하고 있지 않다.
+swift에는 추상 클래스나 추상 메소드라는 언어 기능이 존재하지 않기 때문에 Never형을 return하는 메소드를 호출하는 것이 특징이다.
+```swift
+public class Observable<Element>: ObservableType {
+    public typealias E = Element
+
+    public func subscribe<O: ObserverType>(_ observer: O) -> Disposable where O.E == E {
+        abstractMethod()
+    }
+}
+
+/// 추상 Method를 표현하기 위한 고육지책
+func abstractMethod() -> Never {
+    fatalError("abstract method")
+}
+```
+
