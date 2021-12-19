@@ -211,3 +211,18 @@ public protocol ObserverType {}
    - 검색 화면에서 가장 최신의 값들을 여러개 보여주고 싶을때 유용하다.
 4. AsyncSubject
    - Subject가 completed 되면 가장 마지막 값(element)를 새로운 subscriber 에게 넘겨준다.
+
+---
+
+### 참고 사이트
+
+[RxSwift Subject-아기개발자](https://eunjin3786.tistory.com/36)
+
+[RxSwift Subject 개념-nTOM](https://ntomios.tistory.com/12)
+
+[Hot, Cold Observable](https://youngest-programming.tistory.com/390)
+
+[RxJava-Hot, Cold Observable](https://4z7l.github.io/2020/12/08/rxjava-4.html)
+
+[ReactiveX document](https://reactivex.io/documentation/ko/subject.html)
+[RxSwift Study-Reactive Programming with Swift by Martin Todorov](https://github.com/fimuxd/RxSwift)
