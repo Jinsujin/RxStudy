@@ -15,13 +15,14 @@ RxSwift 를 공부하고 공유하는 공간입니다.
 ### 공부 내용
 |날짜|내용|발표자|
 |---|---|---|
-|2021.12.06|[RxSwift 공부 전 필수 개념 정리](/herohjk/week1/readme.md)|호드|
+|2021.12.12|[RxSwift 공부 전 필수 개념 정리](/herohjk/week1/readme.md)|호드|
+|2021.12.19|[Observable, Subjects, Traits](/herohjk/week2/readme.md)|호드|
 
 ### 참여
 
 |🧑🏻‍💻|👨🏻‍💻|🧑🏻‍💻|👩🏼‍💻|
 |---|---|---|---|
-| [주노](https://github.com/junho7108) | [호드](https://github.com/herohjk) | [Chalie](https://github.com/chalie00) | [진수](https://github.com/Jinsujin) |
+| [두둥](https://github.com/chicazic) | [호드](https://github.com/herohjk) | [Chalie](https://github.com/chalie00) | [진수](https://github.com/Jinsujin) |
 
 <br/>
 
@@ -30,5 +31,5 @@ RxSwift 를 공부하고 공유하는 공간입니다.
 | Week ||
 |---|---|
 |1| OT |
-|2| 이론 공부 |
-|3| - |
+|2| RxSwift 공부 전 필수 개념 정리 |
+|3| Observable, Subjects, Traits |
