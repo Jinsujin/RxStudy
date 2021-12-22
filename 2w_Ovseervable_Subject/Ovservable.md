@@ -9,7 +9,7 @@
     * onError
        * Error Event
        * 한번 호출되면, 그 시점에서 종료 및 구독 폐기
-    * oncompleted
+    * onCompleted
        * 완료 Event
        * 한번 호출되면, 그 시점에서 종료 및 구독 폐기
 ```
@@ -44,7 +44,7 @@ let subscription = observable
     })
 ```
 - Observable: textField.rx.text.asObservable()
-- Observer: { String in print(string) }
+- Observer: { string in print(string) }
 
 ### 3. Subscribe
 * Code 1에서 onNext는 Observable에서 onNext Event가 흘러들어온 시점에서의 처리로  { string in print(string) }을 등록하고 있다. 동일하게 onCompleted, onError도 등록 가능하다.
@@ -82,7 +82,7 @@ dispose는 적절하게 쓰지 않으면 Memory Leak가 발생한다. 하나하�
 ```
 Observable< Int >.never()은 onCompleted을 하지 않은 observable이다. 이것을 subscribe()만 한것 만으로도 dispose되지 않는다. disposeBag를 등록하면 closer가 끝나는 시점에 disposeBag()는 개방되고 구독 처리도 해지된다.
 ### 6. Observable < Element >
-* Observable는 Generic로 정의되어 있다. 하나의 Boservable가 다수의 onNext를 호출한다해도 반환값의 형식은 반드시 동일해야한다.</br>
+* Observable는 Generic로 정의되어 있다. 하나의 Observable가 다수의 onNext를 호출한다해도 반환값의 형식은 반드시 동일해야한다.</br>
 Observable<String>라면 반드시 onNext Event에서는 String형의 값이 반환된다.</br>
 인수에서 Element가 추측 가능하다면 형을 명시 할 필요는 없다.</br>
 * 다수의 값을 반환하는 경우
@@ -104,6 +104,8 @@ Observable<Int>.create { observer in
 subscribe()하면 onNext(1) -> onNext(2) -> onCompleted 순으로 Event를 발생하는 Observable이다.</br>
 <mark>Disposable에 대해서는 추후 Study 후 추가</mark></br>
 
+</br>
+
 **just**</br>
 1회 onNext(value) 직후 onCompleted를 발행
 ```
@@ -118,7 +120,9 @@ Observable<Int>.create { observer in
     return Disposables.create()
 }
 ```
-형태는 값에서 유추되기 때문에 Observable<Int>.just(1)이라고 쓸 필요는 없다.
+형태는 값에서 유추되기 때문에 Observable<Int>.just(1)이라고 쓸 필요는 없다.</br>
+
+</br>
 
 **empty**</br>
 ```
@@ -134,13 +138,17 @@ Observable<Int>.create { observer in
 ```
 empty라면 형태가 추정되지 않기 때문에 형이 반드시 필요</br>
 
+</br>
+
 **never**</br>
 어떠한 Event도 발생하지 않는다.
 ```
 Observable<Int>.never()
 ```
 
-**from**</br>
+</br>
+
+**from** </br>
 Array 등을 Observable로 변환 할 수 있다. </br>
 array
 ```
@@ -158,6 +166,9 @@ Observable<Int>.create { observer in
     return Disposables.create()
 }
 ```
+
+</br>
+
 **optional**
 ```
 let a: Int? = nil
@@ -166,8 +177,58 @@ Observable.from(optional: a)
 <mark>a가 nil이면 Observable.empty(), 값이 있으면 Observable.just(a!)와 같은 동작을 함</mark></br>
 onCompleted() 또는 onNext(a!) -> onCompleted()</br>
 
+</br>
 
-### 8. Subject
+**filter**</br>
+```
+let observable: Observable<Int> = Observable.from([1,2,3,4,5])
+let filteredObservable: Observable<Int> = observable
+    .filter { value in value > 3 }
+```
+원래의 observable를 onNext로 전달받은 값에 대해 조건이 true의 요소만 Observable로 변환</br>
+onCompleted나 onError은 그대로 흐름</br>
+onNext(4) -> onNext(5) -> onCompleted()
+
+</br>
+
+**map** </br>
+```
+let observable: Observable<Int> = Observable.from([1,2,3,4,5])
+let mappedObservable: Observable<Int> = observable
+    .map { value in value * 2 }
+```
+map은 onNext로 흐르는 값을 변환한다. onError이나 onCompleted등은 그대로 흘린다.
+onNext(2) -> onNext(4) -> onNext(8) -> onNext(10) -> onCompleted()</br>
+내부 구현에 따라 형이 변화는 경우도 있음
+```
+let observable: Observable<Int> = Observable.from([1,2,3,4,5])
+let mappedObservable: Observable<String> = observable
+    .map { value in "\(value)" }
+```
+이 경우 원래 observable는 Observable<Int>이지만 map에 의해 Observable<String>로 변환되었다.</br>
+
+</br>
+
+**flatMap** </br>
+flapMap은 가장 많이 쓰는 Operator로써, 비 동기 처리를 계속 붙이는 것이 가능하다.
+값으로 설명하면 아래와 같다.
+```
+let observable: Observable<Int> = Observable.from([1,2,3,4,5])
+let flatMappedObservable: Observable<Int> = observable
+    .flatMap { value in Observable.from(0..<value) }
+```
+0, 0, 1, 0, 1, 2, 0, 1, 2, 3, 0, 1, 2, 3, 4 이후 onCompleted가 흐른다.
+
+### 9. Hot과 Cold
+**<mark>Hot Observable는 원래 있었던 것에 대한 Observable, Cold Observable는 subscribe한 순간에 처음으로 처리가 실행되는 Observable이다.</mark>**</br>
+ex) API Request는 Cold Obsrvable, textfield값은 Hot Observable이다.
+
+
+
+
+</br>
+
+### 10. Subject
 Subject는 Obverver로써도 Observable로써도 동작하는 것</br>
 Event를 받아 처리/Event를 발생 시키는 것이 가능</br>
 1. PublishSubject<br>
@@ -202,8 +263,8 @@ subscriber3: completed
 
 2. BehaviorSubject</br>
 PublishSubject에 replay(최신 Event를 scuscriber에 전달하는 것) 개념을 추가한 것</br>
-**초값이 없으면 replay가 불가하고 error가 된다.** </br>
-**초기치를 갖게 할것인지 element를 optional로 설정할지 필수 항목이다.**
+**초기값이 없으면 replay가 불가하고 error가 된다.** </br>
+**초기값를 갖게 할것인지 element를 optional로 설정할지 필수 항목이다.**
 
 ```
 let behaviorSubject = BehaviorSubject<String>(value: "1")
