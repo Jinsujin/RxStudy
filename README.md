@@ -25,8 +25,8 @@ RxSwift 를 공부하고 공유하는 공간입니다.
 
 ### 📄 주제
 
-| Week |                        | 링크                                                                                                        |
-| :--: | ---------------------- | ----------------------------------------------------------------------------------------------------------- |
-|  1   | OT                     |
-|  2   | `이론`) ReactiveX 기초 | [호드](1.ReactiveX-basic/herohjk/) / [Chalie](1.ReactiveX-basic/chaile/) / [진수](1.ReactiveX-basic/jinsu/) |
-|  3   | -                      |
+| Week |                             | 링크                                                                                                                 |
+| :--: | --------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+|  1   | OT                          |
+|  2   | `이론`) ReactiveX 기초      | [호드](1.ReactiveX-basic/herohjk/) / [Chalie](1.ReactiveX-basic/chaile/) / [진수](1.ReactiveX-basic/jinsu/)          |
+|  3   | `이론`) Observable, Subject | [호드](2.Observable-Subject/herohjk/) / [Chalie](2.Observable-Subject/chaile/) / [진수](2.Observable-Subject/jinsu/) |
