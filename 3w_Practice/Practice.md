@@ -22,5 +22,13 @@
     사. Result 화면 (Log 화면과 1:1 대응)</br>
     아. Observable의 onNext가 On 시 아래 구독 형태에 따른 결과 값을 Result에 출력</br>
 
-3. 
+3. Main StoryBoard</br>
+<img src = "./Image/MainStoryBoard.png">
+
+- 현까지 진행 사항</br>
+   가. Start/End에 기입이 올바른지 확인</br>
+   나. Observable On UI 선택 시 Start ~ End의 Event 발생
+   
+
+
 
