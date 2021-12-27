@@ -89,6 +89,28 @@ init(startNoObs: Observable<String?>, endNoObs: Observable<String?>, model: ObsM
             }
         }.startWith("초기값을 입력해 주세요")
     }
+     func generateArray(start: Int, end: Int) {
+        print("generate On Next Array")
+
+        for i in start ... end {
+            let arrayEle = i + start - 1
+            arrays.append(arrayEle)
+        }
+        generateOnNext()
+    }
+        
+    func generateOnNext() {
+        let scheduler = SerialDispatchQueueScheduler(qos: .default)
+        let source = Observable<Int>.interval(.milliseconds(1000), scheduler: scheduler)
+        var arrayCount = arrays.count
+        source.subscribe { event in
+            if arrayCount > 0{
+                arrayCount -= 1
+                print(event)
+            }
+        }.disposed(by: disposeBag)
+    }
+
 ```
    라. View
 ```
@@ -118,3 +140,8 @@ next(7)
 next(8)
 next(9)
 ```
+라. 차후 과제</br>
+     1. Data 변화에 따른 Tableview 구현
+     2. 각 Subject에 대한 결과값을 Tableview에 구현
+
+     
