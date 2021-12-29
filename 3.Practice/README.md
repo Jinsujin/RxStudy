@@ -14,7 +14,7 @@ let second = first.startWith(4)
 second
 	.subscribe(onNext: {
 		print($0)
-}).startWith(second)
+	}).startWith(second)
 
 // 4
 // 1
@@ -36,9 +36,9 @@ let first = Observable.of([1,2,3])
 let second = Observable.of([4,5,6])
 
 Observable.concat([first, second])
-					.subscribe(onNext: {
-							print($0)
-					})
+	.subscribe(onNext: {
+		print($0)
+	})
 
 // 1
 // 2
