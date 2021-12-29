@@ -4,7 +4,7 @@
 
 - StartWith
     
-    ![99E997365B3CE37012.png](Week%203%20Practice%20a01d310e08764d5784996e6e2b8ec1d7/99E997365B3CE37012.png)
+    ![99E997365B3CE37012.png](./img/99E997365B3CE37012.png)
     
 
 ```swift
@@ -28,7 +28,7 @@ second
 
 - Concat
     
-    ![99C7BB395B3CE47203.png](Week%203%20Practice%20a01d310e08764d5784996e6e2b8ec1d7/99C7BB395B3CE47203.png)
+    ![99C7BB395B3CE47203.png](./img/99C7BB395B3CE47203.png)
     
 
 ```swift
