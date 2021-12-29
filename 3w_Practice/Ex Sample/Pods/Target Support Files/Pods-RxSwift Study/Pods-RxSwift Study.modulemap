@@ -1,0 +1,6 @@
+module Pods_RxSwift_Study {
+  umbrella header "Pods-RxSwift Study-umbrella.h"
+
+  export *
+  module * { export * }
+}
