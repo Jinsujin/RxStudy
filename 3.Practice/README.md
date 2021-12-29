@@ -58,7 +58,7 @@ Observable.concat([first, second])
 - 스레드는 하나의 프로세스 내에서 실행되는 작업흐름의 단위를 말합니다. 보통 한 프로세스는 하나의 스레드를 가지고 있지만, 프로세스 환경에 따라 둘 이상의 스레드를 동시에 실행할 수 있습니다. 이러한 방식을 ***멀티스레딩*** 이라고 합니다. 그리고 프로그램 실행이 시작될 때부터 동작하는 스레드를 ***메인 스레드*** 라 하고 그 외에 나중에 생성된 스레드를 ***서브 스레드*** 또는 ***세컨더리 스레드*** 라고 합니다.
 출처 : [https://velog.io/@kevinkim2586/iOS-Swift-공부-동시성-프로그래밍과-비동기-프로그래밍](https://velog.io/@kevinkim2586/iOS-Swift-%EA%B3%B5%EB%B6%80-%EB%8F%99%EC%8B%9C%EC%84%B1-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%EA%B3%BC-%EB%B9%84%EB%8F%99%EA%B8%B0-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D)
     
-    ![thread.png](Week%203%20Practice%20a01d310e08764d5784996e6e2b8ec1d7/thread.png)
+    ![thread.png](./img/thread.png)
     
 
 ### Background Thread를 활용하여 Data를 받고 다시 UI에 뿌려줄 때 어떻게 해야할까?
