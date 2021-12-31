@@ -17,16 +17,17 @@ RxSwift 를 공부하고 공유하는 공간입니다.
 
 ### 참여
 
-| 🧑🏻‍💻                               | 👨🏻‍💻                                 | 🧑🏻‍💻                                 | 👩🏼‍💻                                  |
-| ----------------------------------- | ---------------------------------- | ------------------------------------- | ----------------------------------- |
-| [두둥](https://github.com/chicazic) | [호드](https://github.com/herohjk) | [Chalie](https://github.com/chalie00) | [진수](https://github.com/Jinsujin) |
+| 🧑🏻‍💻                               | 👨🏻‍💻                                 | 🧑🏻‍💻                               | 👩🏼‍💻                                  |
+| ----------------------------------- | ---------------------------------- | ----------------------------------- | ----------------------------------- |
+| [두둥](https://github.com/chicazic) | [호드](https://github.com/herohjk) | [찰리](https://github.com/chalie00) | [진수](https://github.com/Jinsujin) |
 
 <br/>
 
 ### 📄 주제
 
-| Week |                             | 링크                                                                                                                 |
-| :--: | --------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| Week |                             | 링크                                                                                                                                                                                            |
+| :--: | --------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 |  1   | OT                          |
-|  2   | `이론`) ReactiveX 기초      | [호드](1.ReactiveX-basic/herohjk/) / [Chalie](1.ReactiveX-basic/chaile/) / [진수](1.ReactiveX-basic/jinsu/)          |
-|  3   | `이론`) Observable, Subject | [호드](2.Observable-Subject/herohjk/) / [Chalie](2.Observable-Subject/chaile/) / [진수](2.Observable-Subject/jinsu/) |
+|  2   | `이론`) ReactiveX 기초      | [호드](1.ReactiveX-basic/herohjk/) / [찰리](1.ReactiveX-basic/chaile/) / [진수](1.ReactiveX-basic/jinsu/)                                                                                       |
+|  3   | `이론`) Observable, Subject | [호드](2.Observable-Subject/herohjk/) / [찰리](2.Observable-Subject/chaile/) / [진수](2.Observable-Subject/jinsu/)                                                                              |
+|  4   | `실습`) Observable, Subject | [호드](3.Practice-Observable-Subject/herohjk/) / [찰리](3.Practice-Observable-Subject/chaile/) / [진수](3.Practice-Observable-Subject/jinsu/) / [두둥](3.Practice-Observable-Subject/doodoong/) |
