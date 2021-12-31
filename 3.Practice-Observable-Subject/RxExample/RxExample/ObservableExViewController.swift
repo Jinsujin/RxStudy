@@ -119,6 +119,7 @@ class ObservableExViewController: UIViewController {
     /// size : "800x600"
     private func fetchImage(_ size: String = "800x600") -> Observable<UIImage?> {
         return Observable.just(size)
+//            .delay(.seconds(3), scheduler: MainScheduler.asyncInstance)
             .delay(.seconds(3), scheduler: MainScheduler.instance)
             .map { $0.replacingOccurrences(of: "x", with: "/") }
             .map { "https://picsum.photos/\($0)/?random" }
