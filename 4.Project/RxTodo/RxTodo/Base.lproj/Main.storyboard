@@ -20,13 +20,30 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="gXZ-pW-cUg">
-                                        <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TodoCell" id="gXZ-pW-cUg" customClass="TodoCell" customModule="RxTodo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="24.5" width="414" height="37"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gXZ-pW-cUg" id="3wX-t1-zSH">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="37"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iyh-lf-kN1">
+                                                    <rect key="frame" x="10" y="10" width="394" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="iyh-lf-kN1" secondAttribute="trailing" constant="10" id="1pW-Iz-snF"/>
+                                                <constraint firstItem="iyh-lf-kN1" firstAttribute="leading" secondItem="3wX-t1-zSH" secondAttribute="leading" constant="10" id="QG7-Ig-uAo"/>
+                                                <constraint firstAttribute="bottom" secondItem="iyh-lf-kN1" secondAttribute="bottom" constant="6" id="kXi-5Z-eBo"/>
+                                                <constraint firstItem="iyh-lf-kN1" firstAttribute="top" secondItem="3wX-t1-zSH" secondAttribute="top" constant="10" id="tEV-tC-gfG"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="titleLabel" destination="iyh-lf-kN1" id="uBZ-Au-FDH"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -40,7 +57,9 @@
                             <constraint firstItem="Gaq-mw-XSx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="iGH-V9-OjV"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="jrg-qW-ymr"/>
+                    <navigationItem key="navigationItem" id="jrg-qW-ymr">
+                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="isz-3O-D9C"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="Gaq-mw-XSx" id="TKb-FY-ESe"/>
                     </connections>
@@ -69,6 +88,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -23,6 +23,7 @@
 		6F42B55127821C78009438B5 /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = 6F42B55027821C78009438B5 /* RxBlocking */; };
 		6F42B557278220C4009438B5 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F42B556278220C4009438B5 /* Todo.swift */; };
 		6F42B55927822140009438B5 /* TodoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F42B55827822140009438B5 /* TodoViewModel.swift */; };
+		6F4B64E32784A70B006CAC67 /* TodoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4B64E22784A70B006CAC67 /* TodoCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		6F42B53027821580009438B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6F42B556278220C4009438B5 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		6F42B55827822140009438B5 /* TodoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewModel.swift; sourceTree = "<group>"; };
+		6F4B64E22784A70B006CAC67 /* TodoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				6F42B50D27821579009438B5 /* TodoViewController.swift */,
+				6F4B64E22784A70B006CAC67 /* TodoCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 			files = (
 				6F42B55927822140009438B5 /* TodoViewModel.swift in Sources */,
 				6F42B50E27821579009438B5 /* TodoViewController.swift in Sources */,
+				6F4B64E32784A70B006CAC67 /* TodoCell.swift in Sources */,
 				6F42B50A27821579009438B5 /* AppDelegate.swift in Sources */,
 				6F42B50C27821579009438B5 /* SceneDelegate.swift in Sources */,
 				6F42B51427821579009438B5 /* RxTodo.xcdatamodeld in Sources */,
