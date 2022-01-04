@@ -24,6 +24,7 @@
 		6F42B557278220C4009438B5 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F42B556278220C4009438B5 /* Todo.swift */; };
 		6F42B55927822140009438B5 /* TodoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F42B55827822140009438B5 /* TodoViewModel.swift */; };
 		6F4B64E32784A70B006CAC67 /* TodoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4B64E22784A70B006CAC67 /* TodoCell.swift */; };
+		6F4B64E52784AF80006CAC67 /* AddTodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4B64E42784AF80006CAC67 /* AddTodoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		6F42B556278220C4009438B5 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		6F42B55827822140009438B5 /* TodoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewModel.swift; sourceTree = "<group>"; };
 		6F4B64E22784A70B006CAC67 /* TodoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoCell.swift; sourceTree = "<group>"; };
+		6F4B64E42784AF80006CAC67 /* AddTodoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +172,7 @@
 			children = (
 				6F42B50D27821579009438B5 /* TodoViewController.swift */,
 				6F4B64E22784A70B006CAC67 /* TodoCell.swift */,
+				6F4B64E42784AF80006CAC67 /* AddTodoViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 				6F4B64E32784A70B006CAC67 /* TodoCell.swift in Sources */,
 				6F42B50A27821579009438B5 /* AppDelegate.swift in Sources */,
 				6F42B50C27821579009438B5 /* SceneDelegate.swift in Sources */,
+				6F4B64E52784AF80006CAC67 /* AddTodoViewController.swift in Sources */,
 				6F42B51427821579009438B5 /* RxTodo.xcdatamodeld in Sources */,
 				6F42B557278220C4009438B5 /* Todo.swift in Sources */,
 			);

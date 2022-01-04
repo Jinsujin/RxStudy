@@ -13,12 +13,20 @@ class TodoViewController: UIViewController {
     
     let viewModel = TodoViewModel()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.title = "TODO"
         tableView.delegate = self
         tableView.dataSource = self
+    }
+    
+    
+    @IBAction func touchedAddButton(_ sender: Any) {
+        print("add")
+        let vc = AddTodoViewController()
+        self.navigationController?.pushViewController(vc, animated: false)
     }
 }
 
