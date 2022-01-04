@@ -50,6 +50,4 @@ extension TodoViewController: UITableViewDataSource, UITableViewDelegate {
         cell.titleLabel.text = viewModel.dataList[indexPath.row].title
         return cell
     }
-    
-    
 }
