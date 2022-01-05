@@ -8,11 +8,10 @@
 import UIKit
 
 class TodoViewController: UIViewController {
-
+    
+    private let viewModel = TodoViewModel()
+    
     @IBOutlet weak var tableView: UITableView!
-    
-    let viewModel = TodoViewModel()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,8 +23,11 @@ class TodoViewController: UIViewController {
     
     
     @IBAction func touchedAddButton(_ sender: Any) {
-        print("add")
         let vc = AddTodoViewController()
+        vc.completion = { [weak self] title in
+            self?.viewModel.add(title)
+            self?.tableView.reloadData()
+        }
         self.navigationController?.pushViewController(vc, animated: false)
     }
 }

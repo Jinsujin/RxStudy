@@ -9,6 +9,8 @@ import UIKit
 
 class AddTodoViewController: UIViewController {
 
+    var completion: ((String) -> Void)?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,7 +27,11 @@ class AddTodoViewController: UIViewController {
     
     // TODO: 저장 로직
     @objc func touchedConfirmButton() {
-        print("confirm")
+        guard let title = titleTextField.text else {
+            return
+        }
+        completion?(title)
+        navigationController?.popViewController(animated: false)
     }
 
     private func setupViews() {
@@ -61,3 +67,5 @@ class AddTodoViewController: UIViewController {
         return button
     }()
 }
+
+

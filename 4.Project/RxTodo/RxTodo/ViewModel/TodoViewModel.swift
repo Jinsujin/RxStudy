@@ -26,7 +26,11 @@ final class TodoViewModel {
             .init(title: "이불 빨래", isDone: false),
             .init(title: "화분 물주기", isDone: false)
         ]
-        
         return list
+    }
+    
+    /// 할일 생성
+    func add(_ title: String) {
+        self.dataList.append(.init(title: title, isDone: false))
     }
 }
