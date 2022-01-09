@@ -8,41 +8,43 @@
 import Foundation
 
 
-
-
 final class TodoViewModel {
     
-    var dataList: [Todo] = []
+    var dataList = [Todo]()
     
-    init() {
-        self.dataList = fetchDataList()
+    let repository: Repository
+    
+    init(repository: Repository) {
+        self.repository = repository
+        self.dataList = repository.fetchAll()
     }
     
-    private func fetchDataList() -> [Todo] {
-        let list: [Todo] = [
-            .init( "스파게티 재로 사기"),
-            .init("RxSwift 공부"),
-            .init("건강검진"),
-            .init("이불 빨래"),
-            .init("화분 물주기")
-        ]
-        return list
-    }
     
     /// 할일 생성
     func add(_ title: String) {
-        let newData = Todo(title)
-        self.dataList.append(newData)
+//        let newData = Todo(title)
+//        self.dataList.append(newData)
+        self.repository.add(title) { isSuccess in
+            print("할일 생성 성공")
+        }
     }
     
     /// 할일 삭제
     func delete(at index: Int) {
-        self.dataList.remove(at: index)
+//        self.dataList.remove(at: index)
+        
+        let todo = self.dataList[dataList.index(dataList.startIndex, offsetBy: index)]
+        self.repository.delete(at: todo.uid) { isSucess in
+            print("할일 삭제 성공")
+        }
     }
     
-    func checkDone(at index: Int) {
-        var originData = self.dataList[index]
-        originData.toggleDone()
-        self.dataList[index] = originData
+    func checkDone(at index: Int, completion: @escaping () -> Void) {
+        let todo = self.dataList[dataList.index(dataList.startIndex, offsetBy: index)]
+        self.repository.checkDone(at: todo.uid) { todo in
+            guard let updatedTodo = todo else { return }
+            self.dataList[index] = updatedTodo
+            completion()
+        }
     }
 }

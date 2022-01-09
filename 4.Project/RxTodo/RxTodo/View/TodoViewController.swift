@@ -9,7 +9,7 @@ import UIKit
 
 class TodoViewController: UIViewController {
     
-    private let viewModel = TodoViewModel()
+    private lazy var viewModel = TodoViewModel(repository: TodoRepository.shared)
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -38,8 +38,9 @@ class TodoViewController: UIViewController {
     }
     
     func checkDoneAction(_ indexPath: IndexPath) {
-        viewModel.checkDone(at: indexPath.row)
-        tableView.reloadRows(at: [indexPath], with: .none)
+        viewModel.checkDone(at: indexPath.row) {
+            self.tableView.reloadRows(at: [indexPath], with: .none)
+        }
     }
 }
 
