@@ -34,4 +34,9 @@ final class TodoViewModel {
         let newData = Todo(title)
         self.dataList.append(newData)
     }
+    
+    /// 할일 삭제
+    func delete(at index: Int) {
+        self.dataList.remove(at: index)
+    }
 }

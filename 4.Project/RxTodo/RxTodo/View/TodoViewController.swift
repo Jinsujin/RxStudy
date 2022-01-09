@@ -37,10 +37,6 @@ class TodoViewController: UIViewController {
 
 // MARK:- TableView delegate & datasource
 extension TodoViewController: UITableViewDataSource, UITableViewDelegate {
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.dataList.count
@@ -51,5 +47,37 @@ extension TodoViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TodoCell", for: indexPath) as! TodoCell
         cell.titleLabel.text = viewModel.dataList[indexPath.row].title
         return cell
+    }
+    
+    
+    func deleteAction(_ indexPath: IndexPath) {
+        viewModel.delete(at: indexPath.row)
+        tableView.deleteRows(at: [indexPath], with: .fade)
+    }
+    
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let delete = UIContextualAction(style: .normal, title: "Delete") { (action, view, completion: @escaping (Bool) -> Void) in
+            self.deleteAction(indexPath)
+            completion(true)
+        }
+        delete.backgroundColor = .red
+        
+        let edit = UIContextualAction(style: .normal, title: "Edit") { (action, view, completion: @escaping (Bool) -> Void) in
+            print("edit!!")
+            completion(true)
+        }
+        edit.backgroundColor = .blue
+        return UISwipeActionsConfiguration(actions: [delete, edit])
+    }
+    
+    
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let done = UIContextualAction(style: .normal, title: "Done") { (action, view, completion: @escaping (Bool) -> Void) in
+            print("done!!")
+            completion(true)
+        }
+        done.backgroundColor = .orange
+        return UISwipeActionsConfiguration(actions: [done])
     }
 }
