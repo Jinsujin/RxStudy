@@ -9,7 +9,7 @@ import Foundation
 
 
 protocol Repository {
-    func add(_ title: String, completion: ((Bool) -> Void)?)
+    func add(_ title: String, completion: ((Todo?) -> Void)?)
     func delete(at uid: UUID, completion: ((Bool) -> Void)?)
     func checkDone(at uid: UUID, completion: ((Todo?) -> Void)?)
     func fetchAll() -> [Todo]

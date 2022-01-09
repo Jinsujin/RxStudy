@@ -24,17 +24,20 @@ class TodoViewController: UIViewController {
     
     @IBAction func touchedAddButton(_ sender: Any) {
         let vc = AddTodoViewController()
-        vc.completion = { [weak self] title in
-            self?.viewModel.add(title)
-            self?.tableView.reloadData()
-        }
+        vc.completion = createAction
         self.navigationController?.pushViewController(vc, animated: false)
     }
     
-    //
+    func createAction(_ title: String) {
+        self.viewModel.add(title)
+        self.tableView.reloadData()
+    }
+    
+    
     func deleteAction(_ indexPath: IndexPath) {
-        viewModel.delete(at: indexPath.row)
-        tableView.deleteRows(at: [indexPath], with: .fade)
+        viewModel.delete(at: indexPath.row) {
+            self.tableView.deleteRows(at: [indexPath], with: .fade)
+        }
     }
     
     func checkDoneAction(_ indexPath: IndexPath) {

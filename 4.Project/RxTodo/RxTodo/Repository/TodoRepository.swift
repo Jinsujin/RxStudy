@@ -21,10 +21,10 @@ class TodoRepository: Repository {
         .init("화분 물주기")
     ]
 
-    func add(_ title: String, completion: ((Bool) -> Void)?) {
+    func add(_ title: String, completion: ((Todo?) -> Void)?) {
         let data = Todo(title)
         self.dataList.append(data)
-        completion?(true)
+        completion?(data)
     }
     
     func delete(at uid: UUID, completion: ((Bool) -> Void)?) {

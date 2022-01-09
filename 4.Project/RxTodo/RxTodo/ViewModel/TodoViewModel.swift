@@ -22,23 +22,22 @@ final class TodoViewModel {
     
     /// 할일 생성
     func add(_ title: String) {
-//        let newData = Todo(title)
-//        self.dataList.append(newData)
-        self.repository.add(title) { isSuccess in
-            print("할일 생성 성공")
+        self.repository.add(title) { todo in
+            guard let createdTodo = todo else { return }
+            self.dataList.append(createdTodo)
         }
     }
     
     /// 할일 삭제
-    func delete(at index: Int) {
-//        self.dataList.remove(at: index)
-        
+    func delete(at index: Int, completion: @escaping() -> Void) {
         let todo = self.dataList[dataList.index(dataList.startIndex, offsetBy: index)]
         self.repository.delete(at: todo.uid) { isSucess in
-            print("할일 삭제 성공")
+            self.dataList.remove(at: index)
+            completion()
         }
     }
     
+    /// 할일 완료
     func checkDone(at index: Int, completion: @escaping () -> Void) {
         let todo = self.dataList[dataList.index(dataList.startIndex, offsetBy: index)]
         self.repository.checkDone(at: todo.uid) { todo in
