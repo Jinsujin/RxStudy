@@ -39,4 +39,10 @@ final class TodoViewModel {
     func delete(at index: Int) {
         self.dataList.remove(at: index)
     }
+    
+    func checkDone(at index: Int) {
+        var originData = self.dataList[index]
+        originData.toggleDone()
+        self.dataList[index] = originData
+    }
 }
