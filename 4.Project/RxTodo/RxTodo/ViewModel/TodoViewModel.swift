@@ -20,17 +20,18 @@ final class TodoViewModel {
     
     private func fetchDataList() -> [Todo] {
         let list: [Todo] = [
-            .init(title: "스파게티 재로 사기", isDone: false),
-            .init(title: "RxSwift 공부", isDone: false),
-            .init(title: "건강검진", isDone: false),
-            .init(title: "이불 빨래", isDone: false),
-            .init(title: "화분 물주기", isDone: false)
+            .init( "스파게티 재로 사기"),
+            .init("RxSwift 공부"),
+            .init("건강검진"),
+            .init("이불 빨래"),
+            .init("화분 물주기")
         ]
         return list
     }
     
     /// 할일 생성
     func add(_ title: String) {
-        self.dataList.append(.init(title: title, isDone: false))
+        let newData = Todo(title)
+        self.dataList.append(newData)
     }
 }
