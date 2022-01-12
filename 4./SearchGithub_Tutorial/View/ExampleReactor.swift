@@ -48,7 +48,7 @@ extension ExampleReactor {
             let items = repos.items.map { GitHubItem($0) }
             _state.repos = [GithubSection(header: "first", gitHubItems: items)]
         case .error:
-            _state.error = "네트워크 오류?!?!"
+            _state.error = "네트워크 오류?!?!" // toast
         }
         return _state
     }
