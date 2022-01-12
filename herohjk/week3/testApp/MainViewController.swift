@@ -23,7 +23,7 @@ class MainViewController: UIViewController {
     
     var pauseTime: CFAbsoluteTime?
     
-    var disposeBag = DisposeBag()
+    var uiDisposeBag = DisposeBag()
     
     var timerSubject = BehaviorSubject<Double>(value: 0.0)
     
@@ -39,7 +39,7 @@ class MainViewController: UIViewController {
             .filter { _ in !self.paused }
             .map { doubleToTimeString($0) }
             .bind(to: timerTextLabel.rx.text)
-            .disposed(by: self.disposeBag)
+            .disposed(by: self.uiDisposeBag)
     }
     
     func drawUI() {
@@ -69,10 +69,11 @@ class MainViewController: UIViewController {
             $0.setTitle("START", for: .normal)
             $0.setTitleColor(.black, for: .normal)
             $0.backgroundColor = buttonColor
+            
             $0.rx.tap.bind(with: self) { owner, _  in
                 owner.startButtonTap()
             }
-            .disposed(by: self.disposeBag)
+            .disposed(by: self.uiDisposeBag)
             
             $0.snp.makeConstraints {
                 $0.top.equalTo(timerTextLabel.snp.bottom).offset(20)
@@ -93,7 +94,7 @@ class MainViewController: UIViewController {
                 owner.startButton.setTitle("START", for: .normal)
                 owner.timerDisposeBag = DisposeBag()
             }
-            .disposed(by: self.disposeBag)
+            .disposed(by: self.uiDisposeBag)
             
             $0.snp.makeConstraints {
                 $0.top.equalTo(startButton.snp.bottom).offset(20)
