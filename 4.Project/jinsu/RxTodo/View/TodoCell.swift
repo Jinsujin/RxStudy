@@ -21,4 +21,14 @@ class TodoCell: UITableViewCell {
 
           // Configure the view for the selected state
       }
+    
+    func setData(_ data: Todo) {
+        self.titleLabel.text = data.title
+        
+        if data.isDone {
+            self.titleLabel.textColor = .gray
+        } else {
+            self.titleLabel.textColor = .black
+        }
+    }
 }
