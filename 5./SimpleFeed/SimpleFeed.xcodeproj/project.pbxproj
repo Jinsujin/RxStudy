@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C03863B279150410038577F /* KarrotFlex in Frameworks */ = {isa = PBXBuildFile; productRef = 6C03863A279150410038577F /* KarrotFlex */; };
 		E3A9D793278D0D9A0055B5AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A9D792278D0D9A0055B5AA /* AppDelegate.swift */; };
 		E3A9D795278D0D9A0055B5AA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A9D794278D0D9A0055B5AA /* SceneDelegate.swift */; };
 		E3A9D797278D0D9A0055B5AA /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A9D796278D0D9A0055B5AA /* MainViewController.swift */; };
@@ -16,13 +17,9 @@
 		E3A9D7AD278D0D9D0055B5AA /* SimpleFeedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A9D7AC278D0D9D0055B5AA /* SimpleFeedTests.swift */; };
 		E3A9D7B7278D0D9D0055B5AA /* SimpleFeedUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A9D7B6278D0D9D0055B5AA /* SimpleFeedUITests.swift */; };
 		E3A9D7B9278D0D9D0055B5AA /* SimpleFeedUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A9D7B8278D0D9D0055B5AA /* SimpleFeedUITestsLaunchTests.swift */; };
-		E3A9D7C7278D11E30055B5AA /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = E3A9D7C6278D11E30055B5AA /* RxCocoa */; };
-		E3A9D7C9278D11E30055B5AA /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = E3A9D7C8278D11E30055B5AA /* RxRelay */; };
-		E3A9D7CB278D11E30055B5AA /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E3A9D7CA278D11E30055B5AA /* RxSwift */; };
 		E3A9D7CE278D11F30055B5AA /* ReactorKit in Frameworks */ = {isa = PBXBuildFile; productRef = E3A9D7CD278D11F30055B5AA /* ReactorKit */; };
 		E3A9D7D1278D120B0055B5AA /* Differentiator in Frameworks */ = {isa = PBXBuildFile; productRef = E3A9D7D0278D120B0055B5AA /* Differentiator */; };
 		E3A9D7D3278D120B0055B5AA /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = E3A9D7D2278D120B0055B5AA /* RxDataSources */; };
-		E3A9D7D6278D12270055B5AA /* KarrotFlex in Frameworks */ = {isa = PBXBuildFile; productRef = E3A9D7D5278D12270055B5AA /* KarrotFlex */; };
 		E3A9D7D9278D12380055B5AA /* RxFlow in Frameworks */ = {isa = PBXBuildFile; productRef = E3A9D7D8278D12380055B5AA /* RxFlow */; };
 		E3A9D7DF278D12FE0055B5AA /* UIView+PreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A9D7DE278D12FE0055B5AA /* UIView+PreView.swift */; };
 		E3A9D7E1278D13C10055B5AA /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A9D7E0278D13C10055B5AA /* MainView.swift */; };
@@ -85,13 +82,10 @@
 			files = (
 				E3A9D7D9278D12380055B5AA /* RxFlow in Frameworks */,
 				E3A9D7E4278D15860055B5AA /* Then in Frameworks */,
-				E3A9D7CB278D11E30055B5AA /* RxSwift in Frameworks */,
+				6C03863B279150410038577F /* KarrotFlex in Frameworks */,
 				E3A9D7D1278D120B0055B5AA /* Differentiator in Frameworks */,
-				E3A9D7C9278D11E30055B5AA /* RxRelay in Frameworks */,
 				E3A9D7D3278D120B0055B5AA /* RxDataSources in Frameworks */,
 				E3A9D7CE278D11F30055B5AA /* ReactorKit in Frameworks */,
-				E3A9D7C7278D11E30055B5AA /* RxCocoa in Frameworks */,
-				E3A9D7D6278D12270055B5AA /* KarrotFlex in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,15 +231,12 @@
 			);
 			name = SimpleFeed;
 			packageProductDependencies = (
-				E3A9D7C6278D11E30055B5AA /* RxCocoa */,
-				E3A9D7C8278D11E30055B5AA /* RxRelay */,
-				E3A9D7CA278D11E30055B5AA /* RxSwift */,
 				E3A9D7CD278D11F30055B5AA /* ReactorKit */,
 				E3A9D7D0278D120B0055B5AA /* Differentiator */,
 				E3A9D7D2278D120B0055B5AA /* RxDataSources */,
-				E3A9D7D5278D12270055B5AA /* KarrotFlex */,
 				E3A9D7D8278D12380055B5AA /* RxFlow */,
 				E3A9D7E3278D15860055B5AA /* Then */,
+				6C03863A279150410038577F /* KarrotFlex */,
 			);
 			productName = SimpleFeed;
 			productReference = E3A9D78F278D0D9A0055B5AA /* SimpleFeed.app */;
@@ -320,12 +311,11 @@
 			);
 			mainGroup = E3A9D786278D0D9A0055B5AA;
 			packageReferences = (
-				E3A9D7C5278D11E30055B5AA /* XCRemoteSwiftPackageReference "RxSwift" */,
 				E3A9D7CC278D11F30055B5AA /* XCRemoteSwiftPackageReference "ReactorKit" */,
 				E3A9D7CF278D120B0055B5AA /* XCRemoteSwiftPackageReference "RxDataSources" */,
-				E3A9D7D4278D12270055B5AA /* XCRemoteSwiftPackageReference "KarrotFlex" */,
 				E3A9D7D7278D12380055B5AA /* XCRemoteSwiftPackageReference "RxFlow" */,
 				E3A9D7E2278D15860055B5AA /* XCRemoteSwiftPackageReference "Then" */,
+				6C038639279150410038577F /* XCRemoteSwiftPackageReference "KarrotFlex" */,
 			);
 			productRefGroup = E3A9D790278D0D9A0055B5AA /* Products */;
 			projectDirPath = "";
@@ -466,6 +456,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				EXCLUDED_ARCHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -480,13 +471,14 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VALIDATE_WORKSPACE = NO;
 			};
 			name = Debug;
 		};
@@ -527,6 +519,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				EXCLUDED_ARCHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -535,13 +528,14 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
+				VALIDATE_WORKSPACE = NO;
 			};
 			name = Release;
 		};
@@ -553,6 +547,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = L56LNTR7PZ;
+				EXCLUDED_ARCHS = "";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"FLEXLAYOUT_SWIFT_PACKAGE=1",
@@ -575,6 +570,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_WORKSPACE = NO;
 			};
 			name = Debug;
 		};
@@ -586,6 +582,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = L56LNTR7PZ;
+				EXCLUDED_ARCHS = "";
 				GCC_PREPROCESSOR_DEFINITIONS = "FLEXLAYOUT_SWIFT_PACKAGE=1";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SimpleFeed/Info.plist;
@@ -604,6 +601,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_WORKSPACE = NO;
 			};
 			name = Release;
 		};
@@ -725,12 +723,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		E3A9D7C5278D11E30055B5AA /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+		6C038639279150410038577F /* XCRemoteSwiftPackageReference "KarrotFlex" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			repositoryURL = "https://github.com/daangn/KarrotFlex.git";
 			requirement = {
-				branch = main;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.1;
 			};
 		};
 		E3A9D7CC278D11F30055B5AA /* XCRemoteSwiftPackageReference "ReactorKit" */ = {
@@ -746,14 +744,6 @@
 			repositoryURL = "https://github.com/RxSwiftCommunity/RxDataSources.git";
 			requirement = {
 				branch = main;
-				kind = branch;
-			};
-		};
-		E3A9D7D4278D12270055B5AA /* XCRemoteSwiftPackageReference "KarrotFlex" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/daangn/KarrotFlex.git";
-			requirement = {
-				branch = develop;
 				kind = branch;
 			};
 		};
@@ -776,20 +766,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		E3A9D7C6278D11E30055B5AA /* RxCocoa */ = {
+		6C03863A279150410038577F /* KarrotFlex */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = E3A9D7C5278D11E30055B5AA /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxCocoa;
-		};
-		E3A9D7C8278D11E30055B5AA /* RxRelay */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = E3A9D7C5278D11E30055B5AA /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxRelay;
-		};
-		E3A9D7CA278D11E30055B5AA /* RxSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = E3A9D7C5278D11E30055B5AA /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxSwift;
+			package = 6C038639279150410038577F /* XCRemoteSwiftPackageReference "KarrotFlex" */;
+			productName = KarrotFlex;
 		};
 		E3A9D7CD278D11F30055B5AA /* ReactorKit */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -805,11 +785,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E3A9D7CF278D120B0055B5AA /* XCRemoteSwiftPackageReference "RxDataSources" */;
 			productName = RxDataSources;
-		};
-		E3A9D7D5278D12270055B5AA /* KarrotFlex */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = E3A9D7D4278D12270055B5AA /* XCRemoteSwiftPackageReference "KarrotFlex" */;
-			productName = KarrotFlex;
 		};
 		E3A9D7D8278D12380055B5AA /* RxFlow */ = {
 			isa = XCSwiftPackageProductDependency;

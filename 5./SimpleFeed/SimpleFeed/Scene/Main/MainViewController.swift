@@ -8,7 +8,6 @@
 import UIKit
 import RxSwift
 import RxCocoa
-import KarrotFlex
 import ReactorKit
 
 class MainViewController: UIViewController, View {

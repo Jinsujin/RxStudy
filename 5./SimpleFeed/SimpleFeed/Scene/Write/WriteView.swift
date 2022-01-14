@@ -43,6 +43,12 @@ class WriteView: UIView {
         $0.layer.cornerRadius = 8
     }
     
+    let placeholderLabel = UILabel().then {
+        $0.font = .systemFont(ofSize: 16, weight: .regular)
+        $0.text = "200자 제한"
+        $0.textColor = .systemGray3
+    }
+    
     let warningLabel = UILabel().then {
         $0.text = "200자 제한"
         $0.textColor = .red
@@ -100,16 +106,21 @@ extension WriteView {
                     FlexItem($0, view: self.titleTextField).grow(3)
                 }
                 .padding(16)
-                
+
                 FlexHStack($0) {
                     FlexItem($0, view: self.contentLabel)
                     FlexSpacer($0, spacing: 16)
                     FlexItem($0, view: self.contentTextView)
+                        .define {
+                            FlexItem($0, view: self.placeholderLabel)
+                                .marginTop(-20)
+                                .marginLeft(6)
+                        }
                         .height(300)
                         .grow(3)
                 }
                 .padding(16)
-                
+
                 FlexHStack($0) {
                     FlexItem($0, view: self.warningLabel)
                     FlexSpacer($0, spacing: 16)
@@ -118,6 +129,13 @@ extension WriteView {
                 .alignSelf(.end)
             }
         }
+    }
+    
+    private func bind() {
+        self.contentTextView.rx.text
+            .map { $0?.count ?? 0 > 0 }
+            .bind(to: self.placeholderLabel.rx.isHidden)
+            .disposed(by: self.disposeBag)
     }
 }
 
