@@ -13,13 +13,7 @@ class TodoRepository: Repository {
     static let shared = TodoRepository()
     private init() {}
     
-    var dataList: [Todo] = [
-        .init( "스파게티 재로 사기"),
-        .init("RxSwift 공부"),
-        .init("건강검진"),
-        .init("이불 빨래"),
-        .init("화분 물주기")
-    ]
+    var dataList: [Todo] = []
 
     func add(_ title: String, completion: ((Todo?) -> Void)?) {
         let data = Todo(title)

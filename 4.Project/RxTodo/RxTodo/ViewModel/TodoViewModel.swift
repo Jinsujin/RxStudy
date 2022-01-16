@@ -1,18 +1,18 @@
-//
-//  TodoViewModel.swift
-//  RxTodo
-//
-//  Created by jsj on 2022/01/03.
-//
-
 import Foundation
+import RxSwift
 
 
 final class TodoViewModel {
+    private let repository: Repository
     
-    var dataList = [Todo]()
+    var dataListOb = PublishSubject<[Todo]>()
     
-    let repository: Repository
+    var dataList = [Todo]() {
+        didSet {
+            dataListOb.onNext(dataList)
+        }
+    }
+    
     
     init(repository: Repository) {
         self.repository = repository

@@ -1,11 +1,6 @@
-//
-//  ViewController.swift
-//  RxTodo
-//
-//  Created by jsj on 2022/01/03.
-//
-
 import UIKit
+import RxSwift
+import RxCocoa
 
 class TodoViewController: UIViewController {
     
@@ -13,12 +8,26 @@ class TodoViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    private let disposeBag = DisposeBag()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.title = "TODO"
         tableView.delegate = self
-        tableView.dataSource = self
+        
+        bindUI()
+    }
+    
+    
+    private func bindUI() {
+        viewModel.dataListOb
+//            .filter { !$0.isEmpty }
+            .bind(to: self.tableView.rx.items(cellIdentifier: "TodoCell", cellType: TodoCell.self)) { index, item, cell in
+            cell.setData(item)
+        }.disposed(by: disposeBag)
+        
     }
     
     
@@ -30,14 +39,11 @@ class TodoViewController: UIViewController {
     
     func createAction(_ title: String) {
         self.viewModel.add(title)
-        self.tableView.reloadData()
     }
     
     
     func deleteAction(_ indexPath: IndexPath) {
-        viewModel.delete(at: indexPath.row) {
-            self.tableView.deleteRows(at: [indexPath], with: .fade)
-        }
+        viewModel.delete(at: indexPath.row) { }
     }
     
     func checkDoneAction(_ indexPath: IndexPath) {
@@ -51,21 +57,8 @@ class TodoViewController: UIViewController {
 
 
 // MARK:- TableView delegate & datasource
-extension TodoViewController: UITableViewDataSource, UITableViewDelegate {
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.dataList.count
-    }
+extension TodoViewController: UITableViewDelegate {
     
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TodoCell", for: indexPath) as! TodoCell
-        let data = viewModel.dataList[indexPath.row]
-        cell.setData(data)
-        return cell
-    }
-    
-
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let delete = UIContextualAction(style: .normal, title: "Delete") { (action, view, completion: @escaping (Bool) -> Void) in
             self.deleteAction(indexPath)
