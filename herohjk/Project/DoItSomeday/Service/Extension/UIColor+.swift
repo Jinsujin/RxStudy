@@ -25,4 +25,8 @@ extension UIColor {
             alpha: 1.0
         )
     }
+    
+    static func black(_ value: Float) -> UIColor {
+        UIColor(white: 1.0 - CGFloat(value), alpha: 1.0)
+    }
 }

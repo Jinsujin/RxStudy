@@ -9,9 +9,29 @@ import Foundation
 import UIKit
 import CoreData
 
+func dayBetweenDates(_ oldDate: Date, _ newDate: Date) -> Int {
+    let calendar = Calendar.current
+    let components = calendar.dateComponents([.day], from: oldDate, to: newDate)
+    return components.day ?? 0
+}
+
+func getDMinute(date: Date) -> Int {
+    let calendar = Calendar.current
+    let components = calendar.dateComponents([.minute], from: date, to: Date())
+    
+    return components.minute ?? 0
+}
+
+func getDHour(date: Date) -> Int {
+    let calendar = Calendar.current
+    let components = calendar.dateComponents([.hour], from: date, to: Date())
+    
+    return components.hour ?? 0
+}
+
 func getDDay(date: Date) -> Int {
     let calendar = Calendar.current
-    let components = calendar.dateComponents([.day], from: Date(), to: date)
+    let components = calendar.dateComponents([.day], from: date, to: Date())
     return components.day ?? 0
 }
 

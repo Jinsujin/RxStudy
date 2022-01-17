@@ -39,7 +39,6 @@ final class MainPageTopView: UIView {
         addSubviews(settingButton, sortButton, lineView)
         
         sortButton.do {
-            $0.setTitle("남은일 순", for: .normal)
             $0.setTitleColor(.black, for: .normal)
             
             $0.rx.tap.bind(with: self) { owner, _  in

@@ -90,7 +90,23 @@ final class MainPageView: UIView {
                     cellType: TodoTableViewCell.self
                 )
             ) { _, element, cell in
-                guard let title = element.title, let dDayDate = element.dday else { return }
+                guard let title = element.title,
+                      let dDayDate = element.dday else { return }
+                
+                let dMinute = getDMinute(date: dDayDate) * -1
+                let value = Float(dMinute) / Float(60 * 24 * 30)
+                
+                var textColor: UIColor = .white
+                if value <= 0 {
+                    textColor = .white
+                } else if value > 1 {
+                    textColor = .black
+                } else {
+                    textColor = .black(value)
+                }
+
+                cell.titleText.textColor = textColor
+                cell.dDayText.textColor = textColor
                 
                 cell.titleText.text = title
                 cell.dDayText.text = String("D\(getDDay(date: dDayDate))")
@@ -135,7 +151,7 @@ final class MainPageView: UIView {
 }
 
 extension MainPageView: UITableViewDelegate {
-// swiftlint:disable line_length
+    // swiftlint:disable line_length
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         // swiftlint:enable line_length
         let delete = UIContextualAction(style: .normal, title: "삭제") { _, _, result in
