@@ -1,10 +1,14 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import CoreData
 
 class TodoViewController: UIViewController {
+    var container: NSPersistentContainer!
     
-    private lazy var viewModel = TodoViewModel(repository: TodoRepository.shared)
+//    private lazy var viewModel = TodoViewModel(repository: TodoRepository.shared)
+    private lazy var viewModel = TodoViewModel(repository: CoreDataRepository.shared)
+    
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -14,6 +18,9 @@ class TodoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        let request: NSFetchRequest<TodoEntity> = TodoEntity.fetchRequest()
+//        CoreDataRepository.shared.deleteAll()
+                
         self.title = "TODO"
         tableView.delegate = self
         
@@ -23,7 +30,6 @@ class TodoViewController: UIViewController {
     
     private func bindUI() {
         viewModel.dataListOb
-//            .filter { !$0.isEmpty }
             .bind(to: self.tableView.rx.items(cellIdentifier: "TodoCell", cellType: TodoCell.self)) { index, item, cell in
             cell.setData(item)
         }.disposed(by: disposeBag)

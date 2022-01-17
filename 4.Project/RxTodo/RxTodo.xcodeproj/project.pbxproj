@@ -11,7 +11,7 @@
 		6F42B50C27821579009438B5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F42B50B27821579009438B5 /* SceneDelegate.swift */; };
 		6F42B50E27821579009438B5 /* TodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F42B50D27821579009438B5 /* TodoViewController.swift */; };
 		6F42B51127821579009438B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F42B50F27821579009438B5 /* Main.storyboard */; };
-		6F42B51427821579009438B5 /* RxTodo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6F42B51227821579009438B5 /* RxTodo.xcdatamodeld */; };
+		6F42B51427821579009438B5 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6F42B51227821579009438B5 /* Model.xcdatamodeld */; };
 		6F42B51627821580009438B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F42B51527821580009438B5 /* Assets.xcassets */; };
 		6F42B51927821580009438B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F42B51727821580009438B5 /* LaunchScreen.storyboard */; };
 		6F42B52427821580009438B5 /* RxTodoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F42B52327821580009438B5 /* RxTodoTests.swift */; };
@@ -27,6 +27,9 @@
 		6F4B64E52784AF80006CAC67 /* AddTodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4B64E42784AF80006CAC67 /* AddTodoViewController.swift */; };
 		6F593E62278B5191006CA123 /* TodoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F593E61278B5190006CA123 /* TodoRepository.swift */; };
 		6F593E64278B575A006CA123 /* Repository+Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F593E63278B575A006CA123 /* Repository+Protocol.swift */; };
+		6F5CF3192794558500F7AB54 /* Todo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F5CF3172794558500F7AB54 /* Todo+CoreDataProperties.swift */; };
+		6F5CF31B2794560800F7AB54 /* Todo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F5CF31A2794560800F7AB54 /* Todo+CoreDataClass.swift */; };
+		6F5CF31E27945BEF00F7AB54 /* CoreDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F5CF31D27945BEF00F7AB54 /* CoreDataRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +71,9 @@
 		6F4B64E42784AF80006CAC67 /* AddTodoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoViewController.swift; sourceTree = "<group>"; };
 		6F593E61278B5190006CA123 /* TodoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoRepository.swift; sourceTree = "<group>"; };
 		6F593E63278B575A006CA123 /* Repository+Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Repository+Protocol.swift"; sourceTree = "<group>"; };
+		6F5CF3172794558500F7AB54 /* Todo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Todo+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		6F5CF31A2794560800F7AB54 /* Todo+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Todo+CoreDataClass.swift"; sourceTree = "<group>"; };
+		6F5CF31D27945BEF00F7AB54 /* CoreDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +109,8 @@
 		6F42B4FD27821579009438B5 = {
 			isa = PBXGroup;
 			children = (
+				6F5CF31A2794560800F7AB54 /* Todo+CoreDataClass.swift */,
+				6F5CF3172794558500F7AB54 /* Todo+CoreDataProperties.swift */,
 				6F42B50827821579009438B5 /* RxTodo */,
 				6F42B52227821580009438B5 /* RxTodoTests */,
 				6F42B52D27821580009438B5 /* RxTodoUITests */,
@@ -133,7 +141,7 @@
 				6F42B51527821580009438B5 /* Assets.xcassets */,
 				6F42B51727821580009438B5 /* LaunchScreen.storyboard */,
 				6F42B51A27821580009438B5 /* Info.plist */,
-				6F42B51227821579009438B5 /* RxTodo.xcdatamodeld */,
+				6F42B51227821579009438B5 /* Model.xcdatamodeld */,
 			);
 			path = RxTodo;
 			sourceTree = "<group>";
@@ -185,10 +193,19 @@
 		6F593E60278B4DDB006CA123 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				6F5CF31C27945BD100F7AB54 /* CoreData */,
 				6F593E61278B5190006CA123 /* TodoRepository.swift */,
 				6F593E63278B575A006CA123 /* Repository+Protocol.swift */,
 			);
 			path = Repository;
+			sourceTree = "<group>";
+		};
+		6F5CF31C27945BD100F7AB54 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				6F5CF31D27945BEF00F7AB54 /* CoreDataRepository.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -335,11 +352,14 @@
 			files = (
 				6F42B55927822140009438B5 /* TodoViewModel.swift in Sources */,
 				6F42B50E27821579009438B5 /* TodoViewController.swift in Sources */,
+				6F5CF31E27945BEF00F7AB54 /* CoreDataRepository.swift in Sources */,
 				6F4B64E32784A70B006CAC67 /* TodoCell.swift in Sources */,
 				6F42B50A27821579009438B5 /* AppDelegate.swift in Sources */,
+				6F5CF3192794558500F7AB54 /* Todo+CoreDataProperties.swift in Sources */,
+				6F5CF31B2794560800F7AB54 /* Todo+CoreDataClass.swift in Sources */,
 				6F42B50C27821579009438B5 /* SceneDelegate.swift in Sources */,
 				6F4B64E52784AF80006CAC67 /* AddTodoViewController.swift in Sources */,
-				6F42B51427821579009438B5 /* RxTodo.xcdatamodeld in Sources */,
+				6F42B51427821579009438B5 /* Model.xcdatamodeld in Sources */,
 				6F593E64278B575A006CA123 /* Repository+Protocol.swift in Sources */,
 				6F593E62278B5191006CA123 /* TodoRepository.swift in Sources */,
 				6F42B557278220C4009438B5 /* Todo.swift in Sources */,
@@ -720,13 +740,13 @@
 /* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
-		6F42B51227821579009438B5 /* RxTodo.xcdatamodeld */ = {
+		6F42B51227821579009438B5 /* Model.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				6F42B51327821579009438B5 /* RxTodo.xcdatamodel */,
 			);
 			currentVersion = 6F42B51327821579009438B5 /* RxTodo.xcdatamodel */;
-			path = RxTodo.xcdatamodeld;
+			path = Model.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

@@ -26,7 +26,7 @@ class TodoCell: UITableViewCell {
         self.titleLabel.text = data.title
         
         if data.isDone {
-            self.titleLabel.textColor = .gray
+            self.titleLabel.textColor = .red
         } else {
             self.titleLabel.textColor = .black
         }

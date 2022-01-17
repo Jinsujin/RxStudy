@@ -5,10 +5,12 @@ import RxSwift
 final class TodoViewModel {
     private let repository: Repository
     
-    var dataListOb = PublishSubject<[Todo]>()
+    
+    var dataListOb = BehaviorSubject<[Todo]>(value: [])
     
     var dataList = [Todo]() {
         didSet {
+            print("didSet:", dataList.count)
             dataListOb.onNext(dataList)
         }
     }
@@ -17,6 +19,7 @@ final class TodoViewModel {
     init(repository: Repository) {
         self.repository = repository
         self.dataList = repository.fetchAll()
+        dataListOb.onNext(dataList)
     }
     
     
