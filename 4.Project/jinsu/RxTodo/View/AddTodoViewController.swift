@@ -25,7 +25,6 @@ class AddTodoViewController: UIViewController {
     }
     
     
-    // TODO: 저장 로직
     @objc func touchedConfirmButton() {
         guard let title = titleTextField.text else {
             return
