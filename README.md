@@ -32,4 +32,5 @@ RxSwift 를 공부하고 공유하는 공간입니다.
 |  3   | `이론`) Observable, Subject | [호드](2.Observable-Subject/herohjk/) / [찰리](2.Observable-Subject/chaile/) / [진수](2.Observable-Subject/jinsu/)                                                                              |
 |  4   | `실습`) Observable, Subject | [호드](3.Practice-Observable-Subject/herohjk/) / [찰리](3.Practice-Observable-Subject/chaile/) / [진수](3.Practice-Observable-Subject/jinsu/) / [두둥](3.Practice-Observable-Subject/doodoong/) |
 |  5   | `계획`) 토이 프로젝트 시작  | [호드](4.Project/herohjk/) / [찰리](4.Project/chaile/) / [진수](4.Project/jinsu/) / 두둥                                                                                                        |
-|  5   | `실습`) 토이 프로젝트 1주차 | [호드](4.Project/herohjk/week1.md) / 찰리 / [진수](4.Project/jinsu/week1.md) / 두둥                                                                                                             |
+|  6   | `실습`) 토이 프로젝트 1주차 | [호드](4.Project/herohjk/week1.md) / 찰리 / [진수](4.Project/jinsu/week1.md) / 두둥                                                                                                             |
+|  7   | `실습`) 토이 프로젝트 2주차 | [호드](4.Project/herohjk/week2.md) / 찰리 / [진수](4.Project/jinsu/week2.md) / [두둥](4.Project/doodoong/)                                                                                      |
