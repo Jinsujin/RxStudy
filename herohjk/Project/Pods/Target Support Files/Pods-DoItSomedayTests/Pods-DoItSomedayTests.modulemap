@@ -1,6 +1,0 @@
-framework module Pods_DoItSomedayTests {
-  umbrella header "Pods-DoItSomedayTests-umbrella.h"
-
-  export *
-  module * { export * }
-}

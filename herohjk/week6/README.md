@@ -1,6 +1,6 @@
-DoItSomeday
 
-## 2022-01-17
+## 6주차 내용
+**Project 디렉토리 참조.**
 
 ### Model
 * CoreData를 이용한 TODO 모델 개발
