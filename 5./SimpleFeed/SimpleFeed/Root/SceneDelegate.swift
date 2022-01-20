@@ -6,19 +6,21 @@
 //
 
 import UIKit
+import RxSwift
+import RxFlow
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    private let coordinator = FlowCoordinator()
+    private let disposeBag = DisposeBag()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
-        window = UIWindow(windowScene: windowScene)
-        let reactor = MainReactor()
-        let mainViewController = MainViewController(with: reactor)
-
-        window?.rootViewController = mainViewController
-        window?.makeKeyAndVisible()
+        
+        self.coordinatorLogStart()
+        
+        self.coordinateToAppFlow(with: windowScene)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -36,7 +38,29 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func sceneDidEnterBackground(_ scene: UIScene) {
         (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
     }
-
-
 }
 
+extension SceneDelegate {
+    private func coordinateToAppFlow(with windowScene: UIWindowScene) {
+        let window = UIWindow(windowScene: windowScene)
+        self.window = window
+        
+        let appFlow = AppFlow(window: window)
+        let appStepper = AppStepper()
+        
+        self.coordinator.coordinate(flow: appFlow, with: appStepper)
+        
+        window.makeKeyAndVisible()
+    }
+    
+    private func coordinatorLogStart() {
+        self.coordinator.rx.willNavigate
+            .subscribe(onNext: { flow, step in
+                let currentFlow = "\(flow)".split(separator: ".").last ?? "no flow"
+                print("➡️ will navigate to flow = \(currentFlow) and step = \(step)")
+            })
+            .disposed(by: disposeBag)
+        
+        // didNavigate
+    }
+}

@@ -28,6 +28,8 @@ class AppFlow: Flow {
         switch step {
         case .showMain:
             return self.showMain()
+        default:
+            return .none
         }
     }
     
@@ -41,15 +43,4 @@ class AppFlow: Flow {
             withNextStepper: OneStepper(withSingleStep: AppStep.showMain)
         ))
     }
-    
-//    private func showResult() -> FlowContributors {
-//        let mainFlow = MainFlow()
-//        Flows.use(mainFlow, when: .created) { (root) in
-//            self.window.rootViewController = root
-//        }
-//        return .one(flowContributor: .contribute(
-//            withNextPresentable: mainFlow,
-//            withNextStepper: OneStepper(withSingleStep: AppStep.showResult)
-//        ))
-//    }
 }

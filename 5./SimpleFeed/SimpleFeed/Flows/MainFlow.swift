@@ -11,14 +11,19 @@ import RxFlow
 import RxSwift
 import RxCocoa
 
-class MainFlow: Flow, Stepper {
-
+final class MainFlow: Flow, Stepper {
+    
     var root: Presentable {
         return self.rootViewController
     }
+    
     let steps = PublishRelay<Step>()
-
+    
     private lazy var rootViewController = UINavigationController()
+    
+    deinit {
+        print("\(type(of: self)): \(#function)")
+    }
 
     func navigate(to step: Step) -> FlowContributors {
         guard let step = step as? AppStep else { return .none }
@@ -34,6 +39,8 @@ class MainFlow: Flow, Stepper {
         let reactor = MainReactor()
         let viewController = MainViewController(with: reactor)
         self.rootViewController.setViewControllers([viewController], animated: false)
+        self.rootViewController.isNavigationBarHidden = true
+        
         return .one(flowContributor: .contribute(
             withNextPresentable: viewController,
             withNextStepper: reactor
@@ -44,6 +51,7 @@ class MainFlow: Flow, Stepper {
         let reactor = WriteReactor()
         let viewController = WriteViewController(with: reactor)
         self.rootViewController.pushViewController(viewController, animated: true)
+        
         return .one(flowContributor: .contribute(
             withNextPresentable: viewController,
             withNextStepper: reactor

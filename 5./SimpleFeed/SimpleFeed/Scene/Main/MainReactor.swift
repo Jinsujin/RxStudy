@@ -14,9 +14,9 @@ final class MainReactor: Reactor, Stepper {
     
     // MARK: init
 
-    let initialState: State = State()
     var steps = PublishRelay<Step>()
-
+    let initialState: State = State()
+    
     enum Action {
         case presentAddVC
     }
@@ -36,7 +36,7 @@ extension MainReactor {
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
         case .presentAddVC:
-            self.steps.accept(AppStep.showMain)
+            self.steps.accept(AppStep.showWrite)
             return .empty()
         }
     }
