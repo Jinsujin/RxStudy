@@ -15,7 +15,7 @@ class WriteViewController: UIViewController, View {
 
     // MARK: Properties
     
-    typealias Reactor = MainReactor
+    typealias Reactor = WriteReactor
     
     fileprivate var writeView: WriteView {
         return self.view as! WriteView
@@ -23,7 +23,7 @@ class WriteViewController: UIViewController, View {
     
     var disposeBag = DisposeBag()
     
-    init(with reactor: MainReactor) {
+    init(with reactor: WriteReactor) {
         super.init(nibName: nil, bundle: nil)
         
         self.reactor = reactor
@@ -46,7 +46,7 @@ extension WriteViewController {
     
     // MARK: Bind
     
-    func bind(reactor: MainReactor) {
+    func bind(reactor: WriteReactor) {
         
     }
 }

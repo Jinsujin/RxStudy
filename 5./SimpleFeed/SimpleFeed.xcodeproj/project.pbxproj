@@ -29,6 +29,7 @@
 		E3A9D7EC278D58BD0055B5AA /* AppStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A9D7EB278D58BD0055B5AA /* AppStepper.swift */; };
 		E3A9D7EE278D58E00055B5AA /* AppStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A9D7ED278D58E00055B5AA /* AppStep.swift */; };
 		E3A9D7F0278D59040055B5AA /* MainFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A9D7EF278D59040055B5AA /* MainFlow.swift */; };
+		E3AD67F12798FB5B00712FED /* WriteReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AD67F02798FB5B00712FED /* WriteReactor.swift */; };
 		E3CB297C278D6ADA00954C45 /* WriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CB297B278D6ADA00954C45 /* WriteViewController.swift */; };
 		E3CB297E278D6AE600954C45 /* WriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CB297D278D6AE600954C45 /* WriteView.swift */; };
 /* End PBXBuildFile section */
@@ -71,6 +72,7 @@
 		E3A9D7EB278D58BD0055B5AA /* AppStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStepper.swift; sourceTree = "<group>"; };
 		E3A9D7ED278D58E00055B5AA /* AppStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStep.swift; sourceTree = "<group>"; };
 		E3A9D7EF278D59040055B5AA /* MainFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlow.swift; sourceTree = "<group>"; };
+		E3AD67F02798FB5B00712FED /* WriteReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteReactor.swift; sourceTree = "<group>"; };
 		E3CB297B278D6ADA00954C45 /* WriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteViewController.swift; sourceTree = "<group>"; };
 		E3CB297D278D6AE600954C45 /* WriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -199,6 +201,7 @@
 			children = (
 				E3CB297B278D6ADA00954C45 /* WriteViewController.swift */,
 				E3CB297D278D6AE600954C45 /* WriteView.swift */,
+				E3AD67F02798FB5B00712FED /* WriteReactor.swift */,
 			);
 			path = Write;
 			sourceTree = "<group>";
@@ -369,6 +372,7 @@
 				E3CB297C278D6ADA00954C45 /* WriteViewController.swift in Sources */,
 				E3A9D7EC278D58BD0055B5AA /* AppStepper.swift in Sources */,
 				E3A9D793278D0D9A0055B5AA /* AppDelegate.swift in Sources */,
+				E3AD67F12798FB5B00712FED /* WriteReactor.swift in Sources */,
 				E3A9D7F0278D59040055B5AA /* MainFlow.swift in Sources */,
 				E3A9D7DF278D12FE0055B5AA /* UIView+PreView.swift in Sources */,
 				E3A9D795278D0D9A0055B5AA /* SceneDelegate.swift in Sources */,

@@ -25,6 +25,8 @@ class MainFlow: Flow, Stepper {
         switch step {
         case .showMain:
             return self.showMain()
+        case .showWrite:
+            return self.showWrite()
         }
     }
     
@@ -38,9 +40,13 @@ class MainFlow: Flow, Stepper {
         ))
     }
     
-//    private func showResult() -> FlowContributors {
-//        let viewController = MainViewController()
-//        self.rootViewController.setViewControllers([viewController], animated: false)
-//        return .one(flowContributor: .contribute(withNext: viewController))
-//    }
+    private func showWrite() -> FlowContributors {
+        let reactor = WriteReactor()
+        let viewController = WriteViewController(with: reactor)
+        self.rootViewController.pushViewController(viewController, animated: true)
+        return .one(flowContributor: .contribute(
+            withNextPresentable: viewController,
+            withNextStepper: reactor
+        ))
+    }
 }

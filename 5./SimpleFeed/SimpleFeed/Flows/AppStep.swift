@@ -9,4 +9,5 @@ import RxFlow
 
 enum AppStep: Step {
     case showMain
+    case showWrite
 }
