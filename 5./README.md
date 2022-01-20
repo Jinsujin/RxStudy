@@ -1,29 +1,28 @@
-# RxStudy
+# SimpleFeed
 
-RxSwift 를 공부하고 공유하는 공간입니다.
+간단한 메모 작성 앱
 
-- Rx, MVVM 을 마스터 하는 것을 목표로 해요.
-  - 이론으로 시작해 코드로 작성해요.
-  - 토이 프로젝트를 만들어 봐요.
-- 1주에 한번 공유해요.
-  - 주제를 정해 발표해요.
-- 기록을 남겨요.
-  - github: 코드와 공부한 내용을 Readme 로 작성해 PR로 올리고, 생각을 나누어요.
-  - notion: 같이 공유하면 좋을 참고자료와 회의록을 남겨요.
-    <br/>
+## 목표
+* StoryBoard 사용 안 하고 CodeBase View 구현하기 (KarrotFlex)
+* 비지니스 로직과 뷰 로직을 최대한 떼어놓기 (MVVM -> ReactorKit)
+* 화면 이동 로직 관리에 대한 고민하기 (RxFlow)
+* 고민한 내용 잘 정리하여 Read.me에 작성하기
 
-### 참여
+## View Flow
+* 메인
+  * 피드 작성 버튼
+  * 가장 최근 작성한 메모
+      * 제목
+      * 내용
+* 메모작성
+  * 제목
+  * 내용 
+* 메모목록 (시간적 여유가 있을 경우 기획하기)
 
-| 🧑🏻‍💻                               | 👨🏻‍💻                                 | 🧑🏻‍💻                                 | 👩🏼‍💻                                  |
-| ----------------------------------- | ---------------------------------- | ------------------------------------- | ----------------------------------- |
-| [두둥](https://github.com/chicazic) | [호드](https://github.com/herohjk) | [Chalie](https://github.com/chalie00) | [진수](https://github.com/Jinsujin) |
-
-<br/>
-
-### 📄 주제
-
-| Week |                        | 링크     |
-| :--: | ---------------------- | -------- |
-|  1   | OT                     |
-|  2   | `이론`) ReactiveX 기초 | [링크]() |
-|  3   | -                      |
+## Skill
+* RxSwift (RxCocoa, RxRelay)
+* RxDataSource (메모목록.. 시간 여유가 있을 경우)
+* KarrotFlex, Then (CodeBase View)
+* Core Data (Data Storage)
+* RxFlow (화면 이동 로직 관리)
+* ReactorKit (뷰와 비지니스 로직 관리)
