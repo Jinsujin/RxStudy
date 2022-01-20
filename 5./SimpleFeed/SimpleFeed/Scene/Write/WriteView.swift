@@ -18,6 +18,12 @@ class WriteView: UIView {
     // MARK: Properties
     let disposeBag = DisposeBag()
     
+    var backButton = UIButton().then {
+        $0.titleLabel?.text = "간단 메모"
+        $0.titleLabel?.textAlignment = .center
+        $0.imageView?.image = UIImage(named: "delete")
+    }
+    
     let titleLabel = UILabel().then {
         $0.text = "🐶 제목"
         $0.font = .systemFont(ofSize: 24)
@@ -99,7 +105,8 @@ extension WriteView {
     private func define() {
         self.flex.define {
             FlexVStack($0, justifyContent: .start, alignItems: .stretch) {
-                FlexSpacer($0, spacing: 50)
+                FlexItem($0, view: self.backButton).padding(16).backgroundColor(.orange)
+                
                 FlexHStack($0) {
                     FlexItem($0, view: self.titleLabel)
                     FlexSpacer($0, spacing: 16)
