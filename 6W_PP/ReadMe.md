@@ -43,3 +43,25 @@ RxSwift + MVVM을 공부함과 동시에 건강을 챙기기 위해 나를 위�
           i. TBD
 
  
+## 5주차 현 진행 상태 2022.01.14(금)
+  1. 구현된 Function</br>
+     ### 1) StartTextField에서 지명 입력 후 Enter -> 해당하는 지명에 Annotation Pin 표시 (EndTextField 동일)</br>
+     ### 2) Start/End에 대한 Annotation Pin 설정 후 하단의 Start Button 선택 시 Start/End Pin이 Mapview에 표기됨</br>
+     #### <span style="color:lightgreen">[UserSession] maps short session requested but session sharing is not enabled 가 발생하며, 경로가 그려지지 않음</span>
+     #### StackOverflow에 최근 동일 질문이 있으나 해결책 없음 https://stackoverflow.com/questions/70472607/ios-maps-issue-routes-not-showing
+     #### <span style="color:red">아... Delegate가 Call되지 않아 확인하니 mapview Delegate를 설정하지 않았음</span>
+     ### 3) 경로에 대한 설정 중 자전거에 대한 항목이 없음
+     ```
+     directionRequest.transportType = .walking
+     ```
+     ### 4) Start/End Textfield가 nil이 아닌 경우 재 입력 시 기존 Mapview에서 해당 하는 Testfield의 Annotation을 삭제함
+ 2. 미비한 Function
+    ### 1) MVVM Pattern을 만족하지 못함
+    ### 2) TextField Value 변화에 의한 Mapview 갱신
+    ### <span style="color:lightgreen">Textfield에 대한 변화를 감지는 가능하나 Test 주소에서 위도, 경도를 취득하기 힘듬 (텍스트가 전부 입력되지 않는 상황이 있음)</span>
+    향후 계획</br>
+    i) Textfield가 FirstResponse가 아닌 경우에만 신규 Annotation 갱신</br>
+    ii) 임의의 주소 Array를 설정 후 Textfield에서 text 입력 시 Dropdown Menu에서 Array를 불러와 주소 선택 시 Annotation 갱신</br>
+    
+
+

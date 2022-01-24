@@ -1,0 +1,6 @@
+module Pods_MyBiCycle {
+  umbrella header "Pods-MyBiCycle-umbrella.h"
+
+  export *
+  module * { export * }
+}
