@@ -21,14 +21,14 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TodoCell" id="gXZ-pW-cUg" customClass="TodoCell" customModule="RxTodo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.5" width="414" height="37.5"/>
+                                        <rect key="frame" x="0.0" y="24.5" width="414" height="37"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gXZ-pW-cUg" id="3wX-t1-zSH">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="37.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="37"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iyh-lf-kN1">
-                                                    <rect key="frame" x="10" y="10" width="394" height="21.5"/>
+                                                    <rect key="frame" x="10" y="10" width="394" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -58,11 +58,18 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="jrg-qW-ymr">
-                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="isz-3O-D9C">
-                            <connections>
-                                <action selector="touchedAddButton:" destination="BYZ-38-t0r" id="HxA-fZ-tvO"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem image="plus" catalog="system" id="isz-3O-D9C">
+                                <connections>
+                                    <action selector="touchedAddButton:" destination="BYZ-38-t0r" id="HxA-fZ-tvO"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Item" image="trash.fill" catalog="system" id="f0m-jQ-QMT">
+                                <connections>
+                                    <action selector="touchedAllDeleteBtn:" destination="BYZ-38-t0r" id="dKR-pR-CUQ"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="Gaq-mw-XSx" id="TKb-FY-ESe"/>
@@ -93,6 +100,7 @@
     </scenes>
     <resources>
         <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="trash.fill" catalog="system" width="121" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

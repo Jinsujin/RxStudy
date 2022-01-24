@@ -6,15 +6,15 @@ import CoreData
 class TodoViewController: UIViewController {
     var container: NSPersistentContainer!
     
-//    private lazy var viewModel = TodoViewModel(repository: TodoRepository.shared)
-    private lazy var viewModel = TodoViewModel(repository: CoreDataRepository.shared)
+    private lazy var viewModel = TodoViewModel(repository: TodoRepository.shared)
+//    private lazy var viewModel = TodoViewModel(repository: CoreDataRepository.shared)
     
     
     @IBOutlet weak var tableView: UITableView!
     
     private let disposeBag = DisposeBag()
     
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,6 +36,10 @@ class TodoViewController: UIViewController {
         
     }
     
+    @IBAction func touchedAllDeleteBtn(_ sender: Any) {
+        viewModel.clearAllMenus()
+    }
+    
     
     @IBAction func touchedAddButton(_ sender: Any) {
         let vc = AddTodoViewController()
@@ -43,16 +47,16 @@ class TodoViewController: UIViewController {
         self.navigationController?.pushViewController(vc, animated: false)
     }
     
-    func createAction(_ title: String) {
+    private func createAction(_ title: String) {
         self.viewModel.add(title)
     }
     
     
-    func deleteAction(_ indexPath: IndexPath) {
+    private func deleteAction(_ indexPath: IndexPath) {
         viewModel.delete(at: indexPath.row) { }
     }
     
-    func checkDoneAction(_ indexPath: IndexPath) {
+    private func checkDoneAction(_ indexPath: IndexPath) {
         viewModel.checkDone(at: indexPath.row) {
             self.tableView.reloadRows(at: [indexPath], with: .none)
         }
@@ -73,7 +77,6 @@ extension TodoViewController: UITableViewDelegate {
         delete.backgroundColor = .red
         
         let edit = UIContextualAction(style: .normal, title: "Edit") { (action, view, completion: @escaping (Bool) -> Void) in
-            print("edit!!")
             completion(true)
         }
         edit.backgroundColor = .blue

@@ -6,10 +6,16 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
+
+
 
 class AddTodoViewController: UIViewController {
 
     var completion: ((String) -> Void)?
+    
+    private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +24,7 @@ class AddTodoViewController: UIViewController {
         self.title = "투두 만들기"
         
         setupViews()
+        bindUI()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -33,6 +40,15 @@ class AddTodoViewController: UIViewController {
         navigationController?.popViewController(animated: false)
     }
 
+    private func bindUI() {
+        titleTextField.rx.text
+            .orEmpty
+            .map { $0.count > 3 }
+            .subscribe(onNext: { isValid in
+                self.confirmButton.isEnabled = isValid
+            }).disposed(by: disposeBag)
+    }
+    
     private func setupViews() {
         self.navigationItem.rightBarButtonItem = self.confirmButton
         

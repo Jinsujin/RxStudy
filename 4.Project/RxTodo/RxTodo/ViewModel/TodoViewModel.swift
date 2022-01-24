@@ -1,17 +1,16 @@
 import Foundation
 import RxSwift
+import RxCocoa
 
 
 final class TodoViewModel {
     private let repository: Repository
     
-    
-    var dataListOb = BehaviorSubject<[Todo]>(value: [])
+    var dataListOb = BehaviorRelay<[Todo]>(value: [])
     
     var dataList = [Todo]() {
         didSet {
-            print("didSet:", dataList.count)
-            dataListOb.onNext(dataList)
+            dataListOb.accept(dataList)
         }
     }
     
@@ -19,7 +18,7 @@ final class TodoViewModel {
     init(repository: Repository) {
         self.repository = repository
         self.dataList = repository.fetchAll()
-        dataListOb.onNext(dataList)
+        dataListOb.accept(dataList)
     }
     
     
@@ -48,5 +47,10 @@ final class TodoViewModel {
             self.dataList[index] = updatedTodo
             completion()
         }
+    }
+    
+    /// 전체 삭제
+    func clearAllMenus() {
+        self.dataList = []
     }
 }
